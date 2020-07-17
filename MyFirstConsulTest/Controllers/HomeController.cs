@@ -52,14 +52,29 @@ namespace MyFirstConsulTest.Controllers
                 //url = $"{uri.Scheme }://{serviceDictionary.First().Value.Address}:{serviceDictionary.First().Value.Port}{uri.PathAndQuery}";
                 //做负载均衡
                 AgentService agentService = null;
-                { 
+                {
+                    //平均策略，随机分配
+                    agentService = serviceDictionary[new Random(isSeed++).Next(0, serviceDictionary.Length)].Value;
                 
                 }
-                { 
-                
+                {
+                    //轮询策略，轮流调用服务
+                    agentService = serviceDictionary[isSeed ++%serviceDictionary.Length].Value;
+
                 }
-                { 
-                
+                {
+                    //权重策略，根据每个服务注册时的权重占比分配，实际实现是按照每个服务权重给列表中添加对应数量的服务实例，然后在列表中使用平均策略
+                    List<KeyValuePair<string, AgentService>> pairsLast = new List<KeyValuePair<string, AgentService>>();
+                    foreach (var item in serviceDictionary)
+                    {
+                        int count = int.Parse(item.Value.Tags?[0]);
+                        for (int i = 0; i < count; i++)
+                        {
+                            pairsLast.Add(item);
+                        }
+                    }
+                    agentService = pairsLast[new Random(isSeed++).Next(0, pairsLast.Count)].Value;
+
                 }
                 url = $"{uri.Scheme }://{agentService.Address}:{agentService.Port}{uri.PathAndQuery}";
 
@@ -71,7 +86,7 @@ namespace MyFirstConsulTest.Controllers
             Console.WriteLine($"This is {url} invoke");
             return View();
         }
-
+        private static int isSeed=0;
         public IActionResult Privacy()
         {
             return View();

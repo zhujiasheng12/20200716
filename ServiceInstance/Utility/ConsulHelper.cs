@@ -19,14 +19,14 @@ namespace ServiceInstance.Utility
             });
             string ip = configuration["ip"];
             int port =int.Parse ( configuration["port"]);
-            //int weight = string.IsNullOrWhiteSpace(configuration["weight"]) ? 1 : int.Parse(configuration["weight"]);
+            int weight = string.IsNullOrWhiteSpace(configuration["weight"]) ? 1 : int.Parse(configuration["weight"]);
             client.Agent.ServiceRegister(new AgentServiceRegistration()
             {
                 ID = "service" + Guid.NewGuid(),
                 Name = "UsersData",
                 Address = ip,
                 Port =port ,
-                //Tags =new string[] { weight.ToString()},
+                Tags =new string[] { weight.ToString()},
                 Check = new AgentServiceCheck()
                 {
                     Interval = TimeSpan.FromSeconds(12),
