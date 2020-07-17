@@ -48,8 +48,20 @@ namespace MyFirstConsulTest.Controllers
                 //}
                 Uri uri = new Uri(url);
                 string groupName = uri.Host;
-                var serviceDictionary = response.Where(s => s.Value.Service.Equals(groupName, StringComparison.OrdinalIgnoreCase));
-                url = $"{uri.Scheme }://{serviceDictionary.First().Value.Address}:{serviceDictionary.First().Value.Port}{uri.PathAndQuery}";
+                var serviceDictionary = response.Where(s => s.Value.Service.Equals(groupName, StringComparison.OrdinalIgnoreCase)).ToArray ();
+                //url = $"{uri.Scheme }://{serviceDictionary.First().Value.Address}:{serviceDictionary.First().Value.Port}{uri.PathAndQuery}";
+                //做负载均衡
+                AgentService agentService = null;
+                { 
+                
+                }
+                { 
+                
+                }
+                { 
+                
+                }
+                url = $"{uri.Scheme }://{agentService.Address}:{agentService.Port}{uri.PathAndQuery}";
 
             }
             #endregion 
