@@ -1,6 +1,7 @@
 
+dotnet GetWayDemo.dll --urls="http://*:6299" --ip="192.168.15.15" --port=6299     //ocelot
 
-dotnet MyFirstConsulTest.dll --urls="http://*:5177" --ip="192.168.15.15" --port=5177
+dotnet MyFirstConsulTest.dll --urls="http://*:5177" --ip="192.168.15.15" --port=5177   //客户端
 
 dotnet ServiceInstance.dll --urls="http://*:5726" --ip="192.168.15.15" --port=5726 --weight=1
 
@@ -8,4 +9,4 @@ dotnet ServiceInstance.dll --urls="http://*:5727" --ip="192.168.15.15" --port=57
 
 dotnet ServiceInstance.dll --urls="http://*:5728" --ip="192.168.15.15" --port=5728 --weight=10
 
-consul.exe agent -dev
+consul.exe agent -dev    //consul

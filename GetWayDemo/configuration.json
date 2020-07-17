@@ -1,0 +1,66 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/T/{url}",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "UseServiceDiscovery": true,
+      "ServiceName": "UsersData",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "FileCacheOptions": {
+
+        "TtlSeconds": 10
+      }
+    }
+
+  ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://192.168.15.15:6299",
+      "ServiceDiscoveryProvider": {
+        "Host": "localhost",
+        "Port": 8500,
+        "Type": "Consul"
+
+      },
+      "RateLimitOptions": {
+        "QuotaExceededMessage": "Too Many requests,maybe later?11",
+        "HttpStatusCode": 666
+
+      }
+
+
+    }
+
+
+
+
+
+  //"ReRoutes": [
+  //  {
+  //    "DownstreamPathTemplate": "/api/{url}",
+  //    "DownstreamScheme": "http",
+  //    "UpstreamPathTemplate": "/T/{url}",
+  //    "UpstreamHttpMethod": [ "Get", "Post" ],
+  //    "UseServiceDiscovery": true,
+  //    "ServiceName": "UsersData",
+  //    "LoadBalancerOptions": {
+  //      "Type": "RoundRobin"
+  //    }
+  //  }
+
+  //],
+  //  "GlobalConfiguration": {
+  //    "BaseUrl": "http://192.168.15.15:6299",
+  //    "ServiceDiscoveryProvider": {
+  //      "Host": "localhost",
+  //      "Port": 8500,
+  //      "Type": "Consul"
+
+  //    }
+
+
+  //  }
+}

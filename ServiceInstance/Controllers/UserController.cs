@@ -30,7 +30,11 @@ namespace ServiceInstance.Controllers
         public IEnumerable<User> Get()
         {
             Console.WriteLine($"This is UserController {this._iConfiguration["port"]} invoke");
-            var a= this._iUserService.UserAll();
+            var a= this._iUserService.UserAll().Select (u=>new User() { 
+            id =u.id ,
+            Name =u.Name,
+            Password =$"{this._iConfiguration["ip"]}--{this._iConfiguration["port"]}"
+            });
             return a;
         }
         [HttpGet]

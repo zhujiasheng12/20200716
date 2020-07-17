@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstConsulTest", "MyFirstConsulTest\MyFirstConsulTest.csproj", "{4CB8B399-BDA1-4D4B-8166-637CA74CE98B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFirstConsulTest", "MyFirstConsulTest\MyFirstConsulTest.csproj", "{4CB8B399-BDA1-4D4B-8166-637CA74CE98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBLL", "IBLL\IBLL.csproj", "{BE707730-9343-4968-8CBF-D6A4B95B54EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IBLL", "IBLL\IBLL.csproj", "{BE707730-9343-4968-8CBF-D6A4B95B54EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{C3335255-FC5A-4F37-9F26-3121F0B23987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{C3335255-FC5A-4F37-9F26-3121F0B23987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8D91C038-91BD-4FEC-8138-ACB3381FA215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{8D91C038-91BD-4FEC-8138-ACB3381FA215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceInstance", "ServiceInstance\ServiceInstance.csproj", "{00665536-458E-4012-97F7-09C19C568C6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceInstance", "ServiceInstance\ServiceInstance.csproj", "{00665536-458E-4012-97F7-09C19C568C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetWayDemo", "GetWayDemo\GetWayDemo.csproj", "{C7BDE994-42C3-47ED-A690-C152D5AC988D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{00665536-458E-4012-97F7-09C19C568C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00665536-458E-4012-97F7-09C19C568C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00665536-458E-4012-97F7-09C19C568C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BDE994-42C3-47ED-A690-C152D5AC988D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BDE994-42C3-47ED-A690-C152D5AC988D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BDE994-42C3-47ED-A690-C152D5AC988D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BDE994-42C3-47ED-A690-C152D5AC988D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
